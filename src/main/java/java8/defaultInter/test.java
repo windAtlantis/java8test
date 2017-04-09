@@ -8,6 +8,7 @@ public class test {
     public static void main(String[] args) {
         Defaulable defaulable = DefaulableFactory.create(DefaultableImpl::new);
         System.out.println(defaulable.noRequired());
+        System.out.println("====================");
         defaulable = DefaulableFactory.create(OverridableImpl::new);
         System.out.println(defaulable.noRequired());
     }
