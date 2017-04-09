@@ -15,5 +15,7 @@ public class LambdaTest {
         list.sort((e1, e2)->e1.compareTo(e2));
         System.out.println(list);
     }
-    public void name(){}
+    public void name() {
+        System.out.println("name");
+    }
 }
