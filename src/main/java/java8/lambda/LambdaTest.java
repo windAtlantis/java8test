@@ -24,7 +24,7 @@ public class LambdaTest {
         //在某些情况下lambda的函数体会更加复杂，这时可以把函数体放到在一对花括号中，就像在Java中定义普通函数一样。
         Arrays.asList( "a", "b", "d" ).forEach( e -> {
             System.out.print( e );
-            System.out.print( e );
+            System.out.print( e+"1" );
         } );
 
         //Lambda可以引用类的成员变量与局部变量（如果这些变量不是final的话，它们会被隐含的转为final，这样效率更高）

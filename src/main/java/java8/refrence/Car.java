@@ -27,7 +27,7 @@ public class Car {
     }
 
     /**
-     * 第三种方法引用是特定类的任意对象的方法引用，它的语法是Class::method。请注意，这个方法没有参数。
+     * 第三种方法引用是特定对象的方法引用，它的语法是instance::method。请注意，这个方法接受一个Car类型的参数。
      * @param car
      */
     public void follow(final Car car) {
@@ -35,18 +35,22 @@ public class Car {
     }
 
     /**
-     * 最后，第四种方法引用是特定对象的方法引用，它的语法是instance::method。请注意，这个方法接受一个Car类型的参数
+     * 最后，第四种方法引用是特定类的任意对象的方法引用，它的语法是Class::method。请注意，这个方法没有参数
      */
     public void repair() {
         System.out.println("Repaired "+this.toString());
     }
 
     public static void main(String[] args) {
+        //第一种
         final Car car = Car.create(Car::new);
         final List<Car> cars = Arrays.asList(car);
+        //第二种
         cars.forEach(Car::collide);
-        cars.forEach(Car::repair);
+        //第三种
         cars.forEach(car::follow);
+        //第四种
+        cars.forEach(Car::repair);
         //输出结果应该一致
     }
 }
