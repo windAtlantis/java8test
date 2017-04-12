@@ -31,7 +31,6 @@ public class StreamLib {
             this.points = points;
         }
 
-
         public Status getStatus() {
             return status;
         }
