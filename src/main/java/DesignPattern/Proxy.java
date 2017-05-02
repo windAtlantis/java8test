@@ -19,4 +19,10 @@ public class Proxy implements Subject {
 		subject.requset();
 		System.out.println("end");
 	}
+
+	public static void main(String[] args) {
+		Subject realSubject = new RealSubject();
+		Proxy p = new Proxy(realSubject);
+		p.requset();
+	}
 }

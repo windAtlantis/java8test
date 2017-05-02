@@ -66,10 +66,6 @@ public class ExecutorThread {
 //            System.out.println("delay 3 seconds");
 //        }, 3, TimeUnit.SECONDS); //延迟3秒后执行run方法。
 
-        scheduledThreadPool.scheduleAtFixedRate(new Runnable() {
-            public void run() {
-                System.out.println("delay 1 seconds, and excute every 3 seconds");
-            }
-        }, 1, 3, TimeUnit.SECONDS); //延迟1秒后每3秒执行一次。
+        scheduledThreadPool.scheduleAtFixedRate(() -> System.out.println("delay 1 seconds, and excute every 3 seconds"), 1, 3, TimeUnit.SECONDS); //延迟1秒后每3秒执行一次。
     }
 }
