@@ -22,6 +22,7 @@ public class DynamicProxy implements InvocationHandler {
 		System.out.println("before");
 		Object result = method.invoke(target, args);
 		System.out.println("end");
+		System.out.println("proxy:"+proxy.getClass()+" target:"+target.getClass());
 		return result;
 	}
 
@@ -38,8 +39,12 @@ public class DynamicProxy implements InvocationHandler {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		DynamicProxy dynamicProxy = new DynamicProxy(new RealSubject());
-		Subject subjectProxy = (Subject) dynamicProxy.getProxy();
-		subjectProxy.requset();
+//		DynamicProxy dynamicProxy = new DynamicProxy(new RealSubject());
+//		Subject subjectProxy = (Subject) dynamicProxy.getProxy();
+//		subjectProxy.requset();
+
+		InvocationHandler handler = new DynamicProxy(new RealSubject());
+		Object standardProxy = Proxy.newProxyInstance(Thread.currentThread().getContextClassLoader(), new Class[]{Subject.class}, handler);
+		((Subject)standardProxy).requset();
 	}
 }

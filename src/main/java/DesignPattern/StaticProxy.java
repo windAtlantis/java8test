@@ -5,11 +5,11 @@ package DesignPattern;
  * @Description
  * @date 2017/4/28 18:42
  */
-public class Proxy implements Subject {
+public class StaticProxy implements Subject {
 
 	private Subject subject;
 
-	public Proxy (Subject subject) {
+	public StaticProxy(Subject subject) {
 		this.subject = subject;
 	}
 
@@ -22,7 +22,7 @@ public class Proxy implements Subject {
 
 	public static void main(String[] args) {
 		Subject realSubject = new RealSubject();
-		Proxy p = new Proxy(realSubject);
+		StaticProxy p = new StaticProxy(realSubject);
 		p.requset();
 	}
 }
