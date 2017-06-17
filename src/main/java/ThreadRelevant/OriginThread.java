@@ -1,4 +1,4 @@
-package thread;
+package ThreadRelevant;
 
 /**
  * @author Karl

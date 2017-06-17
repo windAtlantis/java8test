@@ -1,4 +1,4 @@
-package thread.synTools;
+package ThreadRelevant.synTools;
 
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.FutureTask;
