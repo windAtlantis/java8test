@@ -1,7 +1,6 @@
 package java8.stream;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.stream.Stream;
 
 /**
  * @author wangzengjian
@@ -45,12 +44,16 @@ public class StreamsAPI {
 	}
 
 	public static void main(String[] args) {
-		List<Para> list = new ArrayList<>();
-		String key = "key", val = "val";
-		for (int i = 0; i < 10; i++) {
-			list.add(new Para(key+i, val+i));
-		}
-		list.stream().filter(item->"key3".equals(item.getKey())).forEach(e->e.setVal("1212"));
-		list.stream().sorted((p1,p2)->p2.getKey().compareTo(p1.getKey())).forEach(System.out::println);
+//		List<Para> list = new ArrayList<>();
+//		String key = "key", val = "val";
+//		for (int i = 0; i < 10; i++) {
+//			list.add(new Para(key+i, val+i));
+//		}
+//		list.stream().filter(item->"key3".equals(item.getKey())).forEach(e->e.setVal("1212"));
+//		list.stream().sorted((p1,p2)->p2.getKey().compareTo(p1.getKey())).forEach(System.out::println);
+
+		Stream<String> stream = Stream.of("a","b","c","d");
+		System.out.println(stream.anyMatch(va->"b".equals(va)));
+		Stream.iterate('a', item-> ((char) (item + 1))).limit(10).forEach(System.out::println);
 	}
 }
